@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <style>
+ul {
+  list-style-type:none;
+  height:202px;
+  width:674px;
+  margin:10px auto 0;
+}
+li {
+  height:200px;
+  width:200px;
+  margin:0 10px;
+  border:1px solid #222;
+  display:inline-block;
+}
+div {
+  font:20pt 'Georgia';
+  height:50px;
+  width:674px;
+  margin:20px auto 0;
+  text-align:center;
+}
+body.fadeUp, .fadeUp {
+    opacity: 1;
+    -webkit-animation: fadeUp 0.5s ease-out 0s forwards;
+    animation: fadeUp 0.5s ease-out 0s forwards;
+    animation: fadeUp 0.8s ease;
+}
+    </style>
+   
+</head>
+<body class="fadeUp">
+    <ul>
+        <li><img src="https://fourmuddypaws.com/wp-content/uploads/2014/05/bulldog-puppies-playing-e1401294368290.jpg" id="puppies" alt="puppies"/></li>
+        <li><img src="https://4ourpaws.org.za/wp-content/uploads/2017/04/Kittens-200x200.jpg" id="kittens" alt="kittens"/></li>
+        <li><img src="https://static.turbosquid.com/Preview/2014/05/24__18_40_00/aardvark-05.jpg3ef0a5ec-c80e-44aa-8dfa-dcc2758906a6Res200.jpg" id="aardvark" alt="aardvark"/></li>
+      </ul>
+      
+      <div>Click on the picture for description.</div>
+      <script>
+            $('img').click(function() {
+      let alt = $(this).attr('alt');
+      $('div').html(alt);
+    });
+        </script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>
+        .row{
+            margin:3vw
+        }
+        a {
+            text-decoration: none;
+        }
+
+        h1 {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+        }
+
+        .card {
+            float: left;
+        }
+
+        .card .wrapper {
+            background-color: #fff;
+            min-height: 420px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .card .wrapper:hover .data-content {
+            transform: translateY(0);
+        }
+
+        .card .data-content {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            transform: translateY(calc(70px + 1em));
+            transition: transform 0.3s;
+        }
+
+        .card .data-content .content {
+            padding: 1em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card .title {
+            margin-top: 10px;
+        }
+
+        .card .text {
+            height: 70px;
+            margin: 0;
+        }
+
+        .wrapper-1 {
+            background: url(https://images.unsplash.com/photo-1496979551903-46e46589a88b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cda12b505afa1beb06e49d89014cbd65&auto=format&fit=crop&w=634&q=80) 20% 1% / cover no-repeat;
+        }
+
+        .date-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #77d7b9;
+            color: #fff;
+            padding: 0.8em;
+        }
+
+        .content {
+            background-color: #fff;
+            box-shadow: 0 5px 30px 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="example-1 card col-md-3">
+            <div class="wrapper-1">
+                <div class="data-content">
+                    <div class="content">
+                        <h1 class="title">Boxing icon has the will for a couple more fights</h1>
+                        <p class="text">The highly anticipated world championship fight will take place at 10am and
+                            is
+                            the second major boxing blockbuster in the nation after 43 years.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="example-1 card col-md-3">
+            <div class="wrapper-2">
+                <div class="data-content">
+                    <div class="content">
+                        <h1 class="title">Boxing icon has the will for a couple more fights</h1>
+                        <p class="text">The highly anticipated world championship fight will take place at 10am and
+                            is
+                            the second major boxing blockbuster in the nation after 43 years.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="example-1 card col-md-3">
+            <div class="wrapper-3">
+                <div class="data-content">
+                    <div class="content">
+                        <h1 class="title">Boxing icon has the will for a couple more fights</h1>
+                        <p class="text">The highly anticipated world championship fight will take place at 10am and
+                            is
+                            the second major boxing blockbuster in the nation after 43 years.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="example-1 card col-md-3">
+            <div class="wrapper-4">
+                <div class="data-content">
+                    <div class="content">
+                        <h1 class="title">Boxing icon has the will for a couple more fights</h1>
+                        <p class="text">The highly anticipated world championship fight will take place at 10am and
+                            is
+                            the second major boxing blockbuster in the nation after 43 years.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

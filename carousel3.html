@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html, body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+body {
+	background-color: #eec;
+	position: relative;
+	min-height: 300px;
+	overflow-y: scroll;
+}
+body * {
+	font-family: Arial, Geneva, SunSans-Regular, sans-serif;
+	font-size: 14px;
+	color: #333;
+	line-height: 22px;
+}
+body h3 {
+	font-family: Arial, Geneva, SunSans-Regular, sans-serif;
+	font-size: 20px;
+	text-align: center;
+	color: #999;
+	margin: 0;
+	padding-top: 50px;
+	position: relative;
+	z-index: 2;
+}
+ 
+#wrapper {
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+	background-color: #fff;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.caroufredsel_wrapper {
+	background-color: #fff;
+	top: auto !important;
+	bottom: 0 !important;
+}
+#carousel {
+	height: 66%;
+	min-height: 200px;
+	position: absolute;
+	top: auto;
+	left: 0;
+}
+#carousel img {
+	height: 100%;
+	width: auto;
+	display: block;
+	float: left;
+}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.caroufredsel/6.2.1/jquery.carouFredSel.packed.js"></script>
+</head>
+<body>
+        <h3>Resize your browser.</h3>
+        <div id="wrapper">
+            <div id="carousel">
+                <img src="./icons/Whatsapp.png" width="700" height="525" />
+                <img src="./icons/Website1.png" width="700" height="525" />
+                <img src="./icons/twilio.ico" width="700" height="525" />
+                <img src="./icons/telegram.png" width="700" height="525" />
+                <img src="./icons/slack.png" width="700" height="525" />
+                <img src="./icons/telegram.png" width="700" height="525" />
+            </div>
+        </div>
+        <script>
+            $(function() {
+	var $carousel = $('#carousel');
+	var $wrapper = $('#wrapper');
+	var $window = $(window);
+ 
+	$window.resize(function() {
+		$wrapper.height( $window.height() * 0.75 );
+		$carousel.height( $window.height() * 0.5 );
+	}).resize();
+ 
+	$carousel.carouFredSel({
+		width: '100%',
+		scroll: 1,
+		items: {
+			visible: 'odd+2',
+			start: -1,
+			width: 'variable',
+			height: 'variable'
+		}
+	});
+});
+        </script>
+</body>
+</html>

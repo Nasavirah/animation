@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+          .wrapper
+            {
+                text-align: center;
+                width: 800px;
+                margin: auto;
+                font-family: Muli !important;
+            }
+            img{
+                width: 100%;
+            }
+            p{
+                font-size: 16px;
+            }
+            .item{
+                display: inline-block;
+                width: 21%;
+                border: 1px solid silver;
+                height: 288px;
+                vertical-align: top;
+                padding: 12px;
+            }
+            .animated{
+                -webkit-animation-duration:1s;
+                animation-duration:1s;
+                -webkit-animation-fill-mode:both;
+                animation-fill-mode:both
+            }
+
+            @-webkit-keyframes fadeInLeft{
+                0%{
+                    opacity:0;
+                    -webkit-transform:translateX(-200px);
+                    transform:translateX(-200px)}
+                100%{
+                    opacity:1;
+                    -webkit-transform:translateX(0);
+                    transform:translateX(0)
+                }
+            }
+            @keyframes fadeInLeft{
+                0%{
+                    opacity:0;
+                    -webkit-transform:translateX(-200px);
+                    -ms-transform:translateX(-200px);
+                    transform:translateX(-200px)}
+                100%{
+                    opacity:1;
+                    -webkit-transform:translateX(0);
+                    -ms-transform:translateX(0);
+                    transform:translateX(0)
+                }
+            }
+            .fadeInLeft{
+                -webkit-animation-name:fadeInLeft;
+                animation-name:fadeInLeft
+            }
+    </style>
+</head>
+<body>
+        <div class="wrapper">
+              
+                <!-- item -->
+                <div class="item animated fadeInLeft">
+                    <img src="logo.png" alt=""  />
+                    <h3>Web Designing</h3>
+    
+                    <p>Our designers offer services to small to mid size, and High level companies to expand their business</p>
+                </div>
+                <!-- End item -->
+    
+                <!-- item -->
+                <div class="item animated fadeInLeft">
+                    <img src="logo.png" alt=""  />
+                    <h3>Web Development</h3>
+    
+                    <p>Our development team has efficiency to achieve the output specifically to meet up your requirements and your adequate level.</p>
+                </div>
+                <!-- End item -->
+    
+                <!-- item -->
+                <div class="item animated fadeInLeft">
+                    <img src="logo.png" alt=""  />
+                    <h3>Mobile App Development</h3>
+    
+                    <p>Our dedicated mobile app experts are creative and familiar to accomplish your requirements as well as your business needs in cost-effective approach.</p>
+                </div>
+                <!-- End item -->
+    
+                <!-- item -->
+                <div class="item animated fadeInLeft">
+                    <img src="logo.png" alt="" />
+                    <h3>Software Development</h3>
+    
+                    <p>Our Highly skilled software Developers offers services to small to mid size, and High level companies in cost effective approach.</p>
+                </div>
+                <!-- End item -->
+            </div>
+</body>
+</html>

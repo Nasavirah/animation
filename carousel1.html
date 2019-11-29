@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html, body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+body {
+	background: #777;
+}
+body * {
+	font-family: Arial, Geneva, SunSans-Regular, sans-serif;
+	font-size: 14px;
+	color: #222;
+	line-height: 20px;
+}
+ 
+#outer {
+	width: 100%;
+	height: 100%;
+	min-width: 700px;
+	min-height: 600px;
+	position: relative;
+}
+#inner {
+	box-shadow: 0 0 10px #555;
+	background: #ccc;
+	width: 700px;
+	height: 420px;
+	padding: 50px 0;
+	margin: -260px 0 0 -350px;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+#carousel img {
+	box-shadow: 0 0 10px #999;
+	border: 10px solid #fff;
+	display: block;
+	margin: 0 20px;
+	float: left;
+}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.caroufredsel/6.2.1/jquery.carouFredSel.packed.js"></script>
+</head>
+<body>
+    
+<div id="outer">
+        <div id="inner">
+            <div id="carousel">
+                <img src="./icons/slack.png" width="400" height="300" />
+                <img src="./icons/telegram.png" width="400" height="200" />
+                <img src="./icons/twilio.ico" width="300" height="400" />
+                <img src="./icons/Website1.png" width="300" height="300" />
+                <img src="./icons/Whatsapp.png" width="200" height="400" />
+                <img src="./icons/telegram.png" width="400" height="300" />
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function() {
+	$('#carousel').carouFredSel({
+		width: 700,
+		height: 420,
+		items: 1,
+		scroll: {
+			duration: 750,
+			timeoutDuration: 1250
+		}
+ 
+	}).children().each(function() {
+		$(this).css('marginTop', ( 420 - $(this).outerHeight() ) / 2 );
+	});
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+    .tuna {
+  animation: walk-cycle 1s steps(12) infinite;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-90/tuna_sprite.png) 0 0 no-repeat; 
+  height: 400px;
+  width: 1600px;
+  margin: 100px auto 0;
+}
+
+@keyframes walk-cycle {  
+  0% {background-position: 0 0; } 
+  100% {background-position: 0 -2391px; } 
+}
+
+html {text-align: center;}
+</style>
+<script>
+    document.querySelector('input').addEventListener('click', playMusic);
+
+function playMusic() {  
+  document.querySelector('audio').play();
+  // audio tags have play
+};
+</script>
+</head>
+<body>
+    <div class="tuna"></div>
+
+<input type="button" value="Play loop!" />
+
+<!--Notice the pauses in the loopage. So sad. Why you hurt me so, browsers?-->
+<audio loop>
+  <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-90/byakkoya_single.mp3" type='audio/mpeg; codecs="mp3"'/>
+  <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-90/byakkoya_single.ogg" type='audio/ogg; codecs="vorbis"' />
+</audio>
+</body>
+
+</html>

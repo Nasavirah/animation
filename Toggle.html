@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Asap:400,500,700');
+
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-family: 'Asap', sans-serif;
+            background: white;
+        }
+
+        a {
+            text-decoration: none;
+            opacity: .6;
+            padding: 60px;
+            font-weight: bolder;
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            font-size: 1.4em;
+        }
+
+        a:hover {
+            opacity: 1;
+        }
+
+        #container {
+            width: 160px;
+            height: 36px;
+            margin: auto;
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+            user-select: none;
+            cursor: pointer;
+        }
+
+        .inner-container {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: inherit;
+            height: inherit;
+            text-transform: uppercase;
+            font-size: .6em;
+            letter-spacing: .2em;
+        }
+
+        .inner-container:first-child {
+            background: #e9e9e9;
+            color: #a9a9a9;
+        }
+
+        .inner-container:nth-child(2) {
+            background: dodgerblue;
+            color: white;
+            clip-path: inset(0 50% 0 0);
+            transition: .3s cubic-bezier(0, 0, 0, 1);
+        }
+
+        .toggle {
+            width: 50%;
+            position: absolute;
+            height: inherit;
+            display: flex;
+            box-sizing: border-box;
+        }
+
+        .toggle p {
+            margin: auto;
+        }
+
+        .toggle:nth-child(1) {
+            right: 0;
+        }
+    </style>
+    <script>
+        var toggle = document.getElementById('container');
+        var toggleContainer = document.getElementById('toggle-container');
+        var toggleNumber;
+        
+        window.onload = function(e){ 
+
+        toggle.addEventListener('click', function () {
+            toggleNumber = !toggleNumber;
+            if (toggleNumber) {
+                toggleContainer.style.clipPath = 'inset(0 0 0 50%)';
+                toggleContainer.style.backgroundColor = '#D74046';
+            } else {
+                toggleContainer.style.clipPath = 'inset(0 50% 0 0)';
+                toggleContainer.style.backgroundColor = 'dodgerblue';
+            }
+            console.log(toggleNumber)
+        });
+        }
+
+
+        // toggle.addEventListener('click', last);
+
+        // function last(e) {
+        //     console.log("last function")
+        //    if(e.target.id === 'target') {
+        //     toggleNumber = !toggleNumber;
+        //     if (toggleNumber) {
+        //         toggleContainer.style.clipPath = 'inset(0 0 0 50%)';
+        //         toggleContainer.style.backgroundColor = '#D74046';
+        //     } else {
+        //         toggleContainer.style.clipPath = 'inset(0 50% 0 0)';
+        //         toggleContainer.style.backgroundColor = 'dodgerblue';
+        //     }
+        //     console.log(toggleNumber)
+        //    }
+        // }
+        
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <div class="inner-container">
+            <div class="toggle">
+                <p>Private</p>
+            </div>
+            <div class="toggle">
+                <p>Public</p>
+            </div>
+        </div>
+        <div class="inner-container" id='toggle-container'>
+            <div class="toggle">
+                <p>Private</p>
+            </div>
+            <div class="toggle">
+                <p>Public</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

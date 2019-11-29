@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href='//fonts.googleapis.com/css?family=Signika+Negative:300,400' rel='stylesheet' type='text/css'>
+
+    <style>
+        body {
+  margin:20px;
+}
+
+html {
+  --myColor: green;
+}
+
+h2 {
+  font-size:20px;
+}
+
+.wrapper {
+  border: 1px solid var(--myColor);
+  border-radius: 10px;
+  margin-right:10px;
+}
+
+ h2, strong {
+  color:var(--myColor);
+}
+
+.cool {
+  display:inline-block;
+  padding:10px;
+  color:white;
+  border-radius:8px;
+  background-color:var(--myColor);
+}
+
+
+
+    </style>
+    
+</head>
+<body>
+        <div class="wrapper">
+                <h2>Apply same --myColor variable to multiple css rules.</h2>
+                <p>Tweening the <strong> --myColor</strong> variable will update multiple elments.</p>
+              
+<div class="cool">this is cool </div>
+</div>
+</body>
+<script>
+       TweenMax.to("html", 1, {"--myColor":"orange", yoyo:true, repeat:20});
+    </script>
+</html>

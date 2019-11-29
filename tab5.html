@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Responsive Navigation</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        .nav-pills .nav-link.active,
+        .nav-pills .show>.nav-link {
+            background: none;
+            border-left: 2.5px solid #3cc7c6;
+            border-radius: 0
+        }
+
+        h6.active {
+            color: #3cc7c6;
+        }
+
+        .nav-pills .nav-link,
+        .nav-pills .show>.nav-link {
+            background: none;
+            border-radius: 0;
+            max-width: calc(100% - 40px);
+            padding-left: 20px;
+            border-left: 1px solid rgba(65, 72, 89, .2);
+        }
+
+        .nav-link {
+            padding: 2rem 2rem;
+        }
+
+        a {
+            color: black
+        }
+
+        .nav-pills .nav-link.active,
+        .nav-pills .show>.nav-link {
+            color: #3cc7c6;
+        }
+
+        .gradient {
+            padding: 5vw
+        }
+
+        .gradient1 {
+            background-image: linear-gradient(237deg, #48c5f4, #215dd3)
+        }
+
+        .gradient2 {
+            background-image: linear-gradient(236deg, #fad961, #f76b1c)
+        }
+
+        .gradient3 {
+            background-image: linear-gradient(57deg, #5aad31, #a2dc5f)
+        }
+
+        .gradient4 {
+            background-image: linear-gradient(235deg, #43cea2, #185a9d)
+        }
+
+        .gradient5 {
+            background-image: linear-gradient(236deg, #da5eeb, #7813b9)
+        }
+
+        .tab_details {
+            font-size: 2vw;
+            position: relative;
+            top: 0;
+            opacity: 1;
+            transition: top .3s ease-in-out, opacity .3s ease-in-out;
+        }
+    </style>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="tab-content" id="v-pills-tabContent">
+
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                        aria-labelledby="v-pills-home-tab">
+                        <div class="gradient1 gradient">
+                            <h4 class="tab_details">
+                                Welcome to the world of geeks.
+                                This portal has been created to
+                                provide well written, well thought
+                                and well-explained solutions for
+                                selected questions. It is the best
+                                place to learn exciting things about
+                                the world of programming. We've got
+                                exciting problems for interviews,
+                                placements and much more.
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                        aria-labelledby="v-pills-profile-tab">
+                        <div class="gradient2 gradient">
+                            <h4 class="tab_details">
+                                Application Privacy Statement
+                                We Sanchhaya Education Pvt. Ltd.,
+                                are registered and headquartered at
+                                BC 227, 2nd Floor, Matrix Business
+                                Tower, B4, Sector 132, Noida, UP-201301,
+                                hereinafter referred to as GeeksforGeeks.
+                                We also offer paid Courses managed by
+                                Sanchhaya Classes Pvt. Ltd. with registered
+                                office address B-142, Vishwas Park, Uttam Nagar,
+                                New Delhi, North Delhi, Delhi, India, 110059.
+                                At GeeksforGeeks, we value your trust & respect
+                                your privacy. This privacy statement
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
+                        aria-labelledby="v-pills-messages-tab">
+                        <div class="gradient3 gradient">
+                            <h4 class="tab_details">
+                                What impact will you make?
+                                Are you ready to apply your knowledge and background
+                                to exciting new challenges? From learning to leadership,
+                                this is your chance to take your career to the next level.
+                                Apply for below-listed vacancies and our team will
+                                get in touch with you.
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
+                        aria-labelledby="v-pills-settings-tab">
+                        <div class="gradient4 gradient">
+                            <h4 class="tab_details">
+                                Address: GeeksforGeeks 4th,5th & 6th Floor,
+                                Royal Kapsons, A- 118, Sector- 136, Noida,
+                                Uttar Pradesh (201305) For feedback and queries:
+                                feedback @geeksforgeeks .org For course related queries:
+                                geeks. classes@geeksforgeeks .org For payment related issues:
+                                geeks. classes@geeksforgeeks .org For any issue in a purchased
+                                course : complaints@geeksforgeeks.org
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-career" role="tabpanel" aria-labelledby="v-pills-career-tab">
+                        <div class="gradient5 gradient">
+                            <h4 class="tab_details">
+                                What impact will you make?
+                                Are you ready to apply your knowledge and background
+                                to exciting new challenges? From learning to leadership,
+                                this is your For payment related issues:
+                                geeks. classes@geeksforgeeks .org For any issue in a purchased
+                                course : complaints @geeksforgeeks .org
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+                        aria-controls="v-pills-home" aria-selected="true">
+                        <h6>
+                            <span>
+                                <ion-icon name="home"></ion-icon>
+                            </span> Home
+                        </h6>
+                    </a>
+
+                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+                        aria-controls="v-pills-profile" aria-selected="false">
+                        <h6>
+                            <span>
+                                <ion-icon name="add-circle"></ion-icon>
+                            </span> Policies
+                        </h6>
+                    </a>
+
+                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
+                        aria-controls="v-pills-messages" aria-selected="false">
+                        <h6>
+                            <span>
+                                <ion-icon name="attach"></ion-icon>
+                            </span> Vacancies
+                        </h6>
+                    </a>
+
+                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab"
+                        aria-controls="v-pills-settings" aria-selected="false">
+                        <h6>
+                            <span>
+                                <ion-icon name="contact"></ion-icon>
+                            </span> Contact
+                        </h6>
+                    </a>
+                    <a class="nav-link" id="v-pills-career-tab" data-toggle="pill" href="#v-pills-career" role="tab"
+                        aria-controls="v-pills-career" aria-selected="false">
+                        <h6>
+                            <span>
+                                <ion-icon name="attach"></ion-icon>
+                            </span> Career
+                        </h6>
+                    </a>
+                </div>
+                <div class="ta"><span class="_prev _pointer mkosIcon icon_arrowUpStrong"></span><span
+                        class="_next _pointer mkosIcon icon_arrowDownStrong"></span></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

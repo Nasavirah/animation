@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        [href*="facebook"] {
+            background: #3b5999;
+        }
+
+        [href*="facebook"]::before {
+            content: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/15542/facebook.png);
+        }
+
+        [href*="twitter"] {
+            background: #55acee;
+        }
+
+        [href*="twitter"]::before {
+            content: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/15542/twitter.png);
+        }
+
+        [href*="linkedin"] {
+            background: #0077B5;
+        }
+
+        [href*="linkedin"]::before {
+            content: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/15542/linkedin.png);
+        }
+
+        [href*="google"] {
+            background: #dd4b39;
+        }
+
+        [href*="google"]::before {
+            content: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/15542/google.png);
+        }
+
+        ul {
+            margin: 0 auto;
+            max-width: 30rem;
+        }
+
+        a {
+            border: 4px solid black;
+            border-radius: 6px;
+            color: black;
+            display: block;
+            font-weight: bold;
+            margin: 0.25rem;
+            padding: 0.5rem;
+            text-decoration: none;
+        }
+
+        a::before {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 0.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="social">
+        <li>
+            <a href="https://www.facebook.com/me/">
+                Facebook
+            </a>
+        </li>
+        <li>
+            <a href="https://www.twitter.com/me/">
+                Twitter
+            </a>
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/me/">
+                LinkedIn
+            </a>
+        </li>
+        <li>
+            <a href="https://plus.google.com/me/">
+                Google+
+            </a>
+        </li>
+    </ul>
+</body>
+
+</html>

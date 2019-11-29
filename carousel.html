@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html, body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+body {
+	background: #555;
+}
+body * {
+	font-family: Arial, Geneva, SunSans-Regular, sans-serif;
+	font-size: 14px;
+	color: #222;
+	line-height: 20px;
+}
+ 
+#wrapper {
+	border-bottom: 1px solid #777;
+	background: #333;
+	height: 50%;
+	width: 100%;
+	padding-top: 100px;
+	position: absolute;
+}
+#inner {
+	width: 650px;
+	height: 400px;
+	overflow: hidden;
+	margin-left: -325px;
+	position: absolute;
+	bottom: -75px;
+	left: 50%;
+}
+#carousel .slide {
+	width: 650px;
+	height: 400px;
+	float: left;
+	position: relative;
+}
+#carousel .slide > div {
+	height: 400px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+}
+#carousel .slide > div.back {
+	height: 325px;
+}
+#carousel .slide > div.large {
+	left: 0;
+	z-index: 3;
+}
+#carousel .slide > div.large img {
+	margin-top: 50px;
+}
+#carousel .slide > div.small {
+	right: 0;
+	z-index: 2;
+}
+#carousel .slide > div.small img {
+	margin-top: 100px;
+}
+ 
+#pager {
+	position: absolute;
+	bottom: 12px;
+	right: 50px;
+	z-index: 6;
+}
+#pager a {
+	border-radius: 10px;
+	border: 1px solid #888;
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin: 5px;
+}
+#pager a.selected {
+	border-width: 3px;
+	margin: 3px;
+}
+#pager a span {
+	display: none;
+}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.caroufredsel/6.2.1/jquery.carouFredSel.packed.js"></script>
+</head>
+<body>
+        <div id="wrapper">
+                <div id="inner">
+                    <div id="carousel">
+                        <div class="slide">
+                            <div class="large"><img src="./icons/slack.png" alt="dot1" width="450" /></div>
+                            <div class="small"><img src="./icons/telegram.png" alt="dot2" width="350" /></div>
+                        </div>
+                        <div class="slide">
+                            <div class="large"><img src="./icons/twilio.ico" alt="cfs1" width="450" /></div>
+                            <div class="small"><img src="./icons/Website1.png" alt="cfs2" width="350" /></div>
+                        </div>
+                        <div class="slide">
+                            <div class="large"><img src="./icons/Whatsapp.png" alt="val1" width="450" /></div>
+                            <div class="small"><img src="./icons/twilio.ico" alt="val2" width="350" /></div>
+                        </div>
+                    </div>
+                    <div id="pager"></div>
+                </div>
+            </div>
+    
+    <script>
+        $(function() {
+	function setupSlide( $slide ) {
+		$slide.find('.large').addClass( 'back' )
+			.find('img').css({
+				marginTop: 325,
+				marginLeft: 50,
+				width: 400
+			});
+ 
+		$slide.find('.small').addClass( 'back' )
+			.find('img').css({
+				marginTop: 325,
+				marginRight: 50,
+				width: 300
+			});
+	}
+	function slideIn( $slide ) {
+		$slide.find('.large img')
+			.animate({
+				width: 450,
+				marginLeft: 0
+			}, {
+				queue: false,
+				duration: _duration * 1.5
+			})
+			.animate({
+				marginTop: -25
+			}, {
+				duration: _duration,
+				complete: function() {
+					$slide.find('.large').removeClass( 'back' );
+				}
+			})
+			.animate({
+				marginTop: 50
+			}, {
+				duration: _duration / 2
+			});
+ 
+		$slide.find('.small img')
+			.delay( _duration )
+			.animate({
+				marginTop: 50
+			}, {
+				duration: _duration,
+				complete: function() {
+					$slide.find('.small').removeClass( 'back' );
+				}
+			})
+			.animate({
+				marginTop: 100
+			}, {
+				duration: _duration / 2
+			});
+		
+		setTimeout(function() {
+			$slide.find('.small img')
+				.animate({
+					width: 350,
+					marginRight: 0
+				}, {
+					queue: false,
+					duration: _duration
+				});
+		}, _duration * 1.5);
+	}
+	function slideOut( $slide ) {
+		$slide.find('.small img')
+			.animate({
+				width: 300,
+				marginRight: 50
+			}, {
+				queue: false,
+				duration: _duration * 1.5
+			})
+			.animate({
+				marginTop: 50
+			}, {
+				duration: _duration / 2,
+				complete: function() {
+					$slide.find('.small').addClass( 'back' );
+				}
+			})
+			.animate({
+				marginTop: 325
+			}, {
+				duration: _duration
+			});
+ 
+		$slide.find('.large img')
+			.delay( _duration / 2 )
+			.animate({
+				marginTop: -25
+			}, {
+				duration: _duration / 2,
+				complete: function() {
+					$slide.find('.large').addClass( 'back' );
+				}
+			})
+			.animate({
+				marginTop: 325
+			}, {
+				duration: _duration
+			});
+ 
+		setTimeout(function() {
+			$slide.find('.large img')
+				.animate({
+					width: 400,
+					marginLeft: 50
+				}, {
+					queue: false,
+					duration: _duration
+				});
+		}, _duration / 2);
+	}
+ 
+	var $carousel = $('#carousel');
+	var _duration = 500;
+ 
+	$carousel.carouFredSel({
+		items: 1,
+		pagination: '#pager',
+		scroll: {
+			fx: 'none',
+			timeoutDuration: 4000,
+			conditions: function( direction ) {
+				if ( $carousel.hasClass( 'prepared' ) )
+				{
+					$carousel.removeClass( 'prepared' );
+					return true;
+				}
+				if ( $carousel.hasClass( 'animating' ) )
+				{
+					return false;
+				}
+				$carousel.addClass( 'animating' );
+ 
+				var $slide = $carousel.children().first();
+ 
+				slideOut( $slide );
+				setTimeout(
+					function() {
+						$carousel.addClass( 'prepared' );
+						$carousel.trigger( direction );
+					}, _duration * 2
+				);
+ 
+				return false;
+			},
+			onAfter: function( data ) {
+				setupSlide( data.items.visible );
+				slideIn( data.items.visible );
+				setTimeout(
+					function() {
+						$carousel.removeClass( 'animating' );
+					}, _duration * 2.5
+				);
+			}
+		}
+	});
+});
+    </script>
+</body>
+</html>

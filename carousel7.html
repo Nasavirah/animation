@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    html, body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+body {
+	min-height: 600px;
+}
+body * {
+	font-family: Arial, Geneva, SunSans-Regular, sans-serif;
+	font-size: 14px;
+	color: #333;
+	line-height: 22px;
+}
+#wrapper {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.caroufredsel_wrapper {
+	width: 100% !important;
+	height: 100% !important;
+}
+#carousel div {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	float: left;
+}
+#carousel div img {
+	width: auto;
+	height: auto;
+	min-width: 100%;
+	min-height: 100%;
+}
+#text {
+	background-color: rgba(255, 255, 255, 0.8);
+	width: 350px;
+	height: 350px;
+	padding: 50px;
+	margin: -225px 0 0 -225px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	box-shadow: 0 0 50px #000;
+	border-radius: 20px;
+}
+#text h4 {
+	font-size: 33px;
+	line-height: 25px;
+	margin: 0 0 20px 0;
+}
+#text small, #text small * {
+	font-size: 12px;
+	color: #666;
+}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.caroufredsel/6.2.1/jquery.carouFredSel.packed.js"></script>
+
+</head>
+<body>
+        <div id="wrapper">
+                <div id="carousel">
+                    <div><img src="./icons/slack.png" alt="grozny1" width="960" height="560" /></div>
+                    <div><img src="./icons/telegram.png" alt="grozny2" width="960" height="639" /></div>
+                    <div><img src="./icons/twilio.ico" alt="grozny3" width="960" height="640" /></div>
+                    <div><img src="./icons/Whatsapp.png" alt="grozny4" width="960" height="607" /></div>
+                </div>
+                <div id="text">
+                    <h4>Modest Celebration<br />
+                        In Grozny</h4>
+                    <p>The Chechen leader, Ramzan Kadyrov, has held a star-studded party in his capital Grozny - but denied it was anything to do with his 35th birthday.</p>
+                    <p>Oscar-winning actor Hilary Swank and action star Jean-Claude van Damme have been criticised for attending the lavish party. Kadyrov is linked to a grim record of abuse. When stars get paid to turn up to party with him, it trivializes the suffering of countless victims of human rights abuses.<br />
+                        <small>Source: <a href="http://gigapica.geenstijl.nl/2011/10/modest_celebration_in_grozny.html" target="_blank">gigapica.geenstijl.nl</a></small></p>
+                    <hr />
+                    <p>Select a transition-effect: <select id="fx">
+                        <option value="none">None</option>
+                        <option value="scroll" selected="selected">Scroll</option>
+                        <option value="crossfade">Crossfade</option>
+                        <option value="cover">Cover</option>
+                    </select></p>
+                </div>
+            </div>
+        <script>
+        $(function() {
+	$('#carousel').carouFredSel({
+		width: $(window).width(),
+		height: $(window).height(),
+		align: false,
+		items: {
+			visible: 1,
+			width: 'variable',
+			height: 'variable'
+		}
+	});
+ 
+	$(window).resize(function() {
+		var newCss = {
+			width: $(window).width(),
+			height: $(window).height()
+		};
+		$('#carousel').css( 'width', newCss.width*4 );
+		$('#carousel').parent().css( newCss );
+		$('#carousel div').css( newCss );
+	}).resize();
+ 
+	$('select#fx').change(function() {
+		$('#carousel').trigger('configuration', ['auto.fx', $('select#fx').val()]);
+	});
+});
+        </script>
+</body>
+</html>
